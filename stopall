@@ -1,0 +1,4 @@
+#!/bin/bash
+# aux | grep ./process| grep Server | awk ’{print $2}’ | xargs -n1 kill -9
+ps aux | grep " Server" | awk '{print  $2}' | xargs kill
+rm logs/*.ser *.txt

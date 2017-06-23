@@ -1,0 +1,4 @@
+#!/bin/bash
+#rm logs/*.ser
+javac *.java
+java Server $1 $2 $3

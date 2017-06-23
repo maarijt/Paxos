@@ -1,0 +1,33 @@
+#!/bin/bash
+javac Test.java
+java Test
+
+0 start 4 10000
+1 start 4 10001
+2 start 4 10002
+3 start 4 10003
+1 msg 0 Alice
+2 msg 1 Bob
+3 msg 2 Carol
+-1 waitForAck 0
+-1 waitForAck 1
+-1 waitForAck 2
+0 get chatLog
+3 get chatLog
+
+0 start 4 30029
+1 start 4 30030
+2 start 4 30031
+3 start 4 30032
+0 msg 0 WhatsYourName
+-1 waitForAck 0
+3 crash
+1 msg 1 Alice
+2 msg 2 Bob
+-1 waitForAck 1
+-1 waitForAck 2
+3 start 4 30004
+3 msg 3 Carol
+-1 waitForAck 3
+0 get chatLog
+3 get chatLog
